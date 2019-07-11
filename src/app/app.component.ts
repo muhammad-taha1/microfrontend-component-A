@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { MatSliderChange } from '@angular/material'
+import { Component, Output, EventEmitter, Input } from '@angular/core';
+import { MatSliderChange } from '@angular/material';
 
 @Component({
   selector: 'app-root',
@@ -15,7 +15,11 @@ export class AppComponent {
   thumbLabel = true;
   value = 0;
 
+  @Output() sliderEvent = new EventEmitter<number>();
+  @Input() parentMessage = '';
+
   onInputChange(event: MatSliderChange) {
     this.value = event.value;
+    this.sliderEvent.emit(this.value);
   }
 }

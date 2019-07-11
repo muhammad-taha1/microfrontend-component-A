@@ -5,20 +5,25 @@
   </h1>
 </div>
 
-<div>
-  <mat-card>
-    <mat-card-content>
-      <h2 class="example-h2">Slider value: {{value}}</h2>
+<div class="example-container">
+  <div class="example-left-div">
+    <mat-card>
+      <mat-card-content>
+        <h2 class="example-h2">Slider value: {{value}}</h2>
 
-      <mat-slider
-          class="example-margin"
-          [max]="max"
-          [min]="min"
-          [thumbLabel]="thumbLabel"
-          [(ngModel)]="value"
-          [vertical]="false"
-          (input)="onInputChange($event)">
-      </mat-slider>
-    </mat-card-content>
-  </mat-card>
+        <mat-slider
+            class="example-margin"
+            [max]="max"
+            [min]="min"
+            [thumbLabel]="thumbLabel"
+            [(ngModel)]="value"
+            [vertical]="false"
+            (input)="onInputChange($event)">
+        </mat-slider>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <div class="example-right-div">message from background: {{parentMessage}}</div>
+
 </div>
