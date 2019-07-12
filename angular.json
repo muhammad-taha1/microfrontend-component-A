@@ -15,7 +15,7 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-builders/custom-webpack:browser",
           "options": {
             "outputPath": "dist",
             "index": "src/index.html",
@@ -35,7 +35,10 @@
               {
                 "input": "node_modules/document-register-element/build/document-register-element.js"
               }
-            ]
+            ],
+            "customWebpackConfig" : {"path":"webpack.extra.js",
+              "mergeStrategies": {"externals":"replace"}}
+
           },
           "configurations": {
             "production": {
